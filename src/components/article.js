@@ -1,9 +1,12 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
+import Comment from './comments';
+import listSwitcher from '../decorators/listSwitcher'
 
 class Article extends PureComponent {
+
     render() {
         const { article, isOpen, toggleOpen } = this.props
-        console.log('---', 'rendering article')
+
         return (
             <div>
                 <h2>{article.title}</h2>
@@ -14,15 +17,23 @@ class Article extends PureComponent {
     }
 
     getBody() {
-        const { article, isOpen } = this.props
+        const { article, isOpen, openList, toggleList } = this.props
+
         if (!isOpen) return null
 
         return (
-            <section>
+            <div>
+              <section>
                 {article.text}
-            </section>
+              </section>
+              <Comment article = {article}
+                       isOpenList = {openList}
+                       toggleListOpen = {toggleList}
+              />
+            </div>
         )
     }
+
 }
 
-export default Article
+export default listSwitcher(Article)

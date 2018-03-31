@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {findDOMNode} from 'react-dom'
+// import {findDOMNode} from 'react-dom'
 import Article from './article'
 import accordion from '../decorators/accordion'
 
@@ -13,7 +13,8 @@ class ArticleList extends Component {
     }
 
     getArticles() {
-        const { articles, openItemId, toggleItem } = this.props
+        const { articles, openItemId, toggleItem } = this.props;
+
         return articles.map(article => (
             <li key = {article.id}>
                 <Article article = {article}
@@ -25,9 +26,9 @@ class ArticleList extends Component {
         ))
     }
 
-    setListElementRef = listElement => {
-        console.log('---', listElement, findDOMNode(listElement))
-    }
+    // setListElementRef = listElement => {
+    //     console.log('---', listElement, findDOMNode(listElement))
+    // }
 }
 
 export default accordion(ArticleList)

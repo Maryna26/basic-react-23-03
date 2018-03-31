@@ -1,0 +1,13 @@
+.AppInner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.AppDayPicker,
+.AppSelectionForm{
+    display: flex;
+    flex-direction: column;
+}
+.AppSelectionForm {
+    width: 30%;
+}
