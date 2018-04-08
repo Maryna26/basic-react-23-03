@@ -18,11 +18,15 @@ export class ArticleList extends Component {
     }
 
     getArticles() {
-        const { articles, openItemId, toggleItem } = this.props
+        const { articles, openItemId, toggleItem } = this.props;
+        console.log('openItemId', openItemId)
+      let test = false
+
         return articles.map(article => (
+
             <li key = {article.id} className = "test--article-list__item">
                 <Article article = {article}
-                         isOpen = {article.id === openItemId}
+                         isOpen = {(article.id === openItemId)}
                          toggleOpen = {toggleItem}
                          ref = {this.setListElementRef}
                 />

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import CommentList from '../comment-list'
+import CommentList from '../comment-list/index'
 import CSSTransition from 'react-addons-css-transition-group'
 import './style.css'
 
@@ -15,6 +15,7 @@ class Article extends PureComponent {
 
     render() {
         const { article, isOpen, toggleOpen } = this.props
+
         return (
             <div>
                 <h2>{article.title}</h2>
@@ -30,7 +31,7 @@ class Article extends PureComponent {
                     transitionAppearTimeout = {1000}
                     transitionAppear
                 >
-                    {this.getBody()}
+                  {this.getBody()}
                 </CSSTransition>
             </div>
         )

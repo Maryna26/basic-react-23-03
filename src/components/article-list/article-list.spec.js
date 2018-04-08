@@ -21,6 +21,10 @@ describe('ArticleList', () => {
 
         wrapper.find('.test--article__btn').at(0).simulate('click')
         expect(wrapper.find('.test--article__body').length).toEqual(1)
+
+        wrapper.find('.test--article__btn').at(0).simulate('click')
+        expect(wrapper.find('.test--article__body').length).toEqual(0)
+
     });
 
     it('should fetch data', () => {
